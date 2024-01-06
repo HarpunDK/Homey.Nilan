@@ -8,10 +8,12 @@
     "local"
   ],
   "name": {
-    "en": "Nilan Air"
+    "en": "Nilan Air",
+    "da": "Nilan Air"
   },
   "description": {
-    "en": "Adds support for Nilan Airfilters."
+    "en": "Adds support for Nilan Air-filters.",
+    "da": "Tilføjer understøttelse for Nilan Air"
   },
   "category": [
     "climate"
