@@ -1,0 +1,10 @@
+{
+  "type": "number",
+  "title": { "en": "Inlet filter", "da": "Indvendig filter" },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true,
+  "units": { "en": "Dage" },
+  "insights": true,
+  "icon": "/assets/images/sharp-light-vent-damper-clock.svg"
+}

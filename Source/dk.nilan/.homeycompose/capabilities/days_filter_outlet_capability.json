@@ -1,0 +1,10 @@
+{
+  "type": "number",
+  "title": { "en": "Outlet filter", "da": "Udvendig filter" },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true,
+  "units": { "en": "Dage" },
+  "insights": true,
+  "icon": "/assets/images/sharp-light-vent-damper-clock.svg"
+}

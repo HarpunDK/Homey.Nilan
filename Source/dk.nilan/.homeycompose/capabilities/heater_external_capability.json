@@ -1,0 +1,9 @@
+{
+    "type": "string",
+    "title": { "en": "External heater", "da": "Ekstern varmer" },
+    "uiComponent": "sensor",
+    "getable": true,
+    "setable": true,
+    "icon": "/assets/images/fan-sharp-light.svg",
+    "insights": true
+  }

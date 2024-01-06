@@ -1,0 +1,12 @@
+{
+    "type": "number",
+    "title": { "en": "Extract", "da": "Fraluft" },
+    "uiComponent": "sensor",
+    "getable": true,
+    "setable": true,
+    "units": { "en": "°C" },
+    "min": -40,
+    "decimals": 0,
+    "insights": true,
+    "icon": "/assets/images/temperature-high-sharp-light.svg"
+  }

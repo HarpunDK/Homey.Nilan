@@ -1,0 +1,8 @@
+{
+  "type": "boolean",
+  "title": { "en": "Error read" },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "sensor",
+  "icon": "/assets/images/sharp-light-database-slash.svg"
+}

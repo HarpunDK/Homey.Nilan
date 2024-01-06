@@ -1,0 +1,41 @@
+{
+  "name": {
+    "en": "Airfilter"
+  },
+  "class": "heater",
+  "capabilities": [ 
+    "alarm_connection_capability", "alarm_read_capability", 
+    "temperature_outside_capability", "temperature_supply_capability", 
+    "temperature_extract_capability", "temperature_discharge_capability",
+    "temperature_condenser_capability", "temperature_evaporator_capability",
+    "percentage_humidity_capability", "temperature_master_capability",
+    "water_top_temperature_capability", "water_bottom_temperature_capability",
+    "days_filter_inlet_capability", "days_filter_outlet_capability",
+    "alarm_filter_inlet_capability", "alarm_filter_outlet_capability",
+    "systemworkmode_capability", "heater_external_capability"
+   ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "boolean",
+  "title": { "en": "Outlet filter service", "da": "Udvendig filter service" },
+  "getable": true,
+  "setable": true,
+  "insights": true,
+  "uiComponent": "sensor",
+  "icon": "/assets/images/sharp-light-vent-damper-circle-exclamation.svg"
+}

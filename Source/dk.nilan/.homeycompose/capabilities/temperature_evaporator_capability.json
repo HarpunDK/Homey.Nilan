@@ -1,0 +1,12 @@
+{
+    "type": "number",
+    "title": { "en": "Evaporator", "da": "Fordamper" },
+    "uiComponent": "sensor",
+    "getable": true,
+    "setable": true,
+    "units": { "en": "°C" },
+    "min": -40,
+    "decimals": 0,
+    "insights": true,
+    "icon": "/assets/images/oil-temperature-sharp-light.svg"
+  }

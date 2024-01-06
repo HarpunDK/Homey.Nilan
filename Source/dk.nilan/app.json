@@ -1,0 +1,557 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "dk.nilan",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Nilan Air"
+  },
+  "description": {
+    "en": "Adds support for Nilan Airfilters."
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Kim Kokholm",
+    "email": "kokholm@gmail.com"
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "KimKokholm"
+      }
+    }
+  },
+  "brandColor": "#db2029",
+  "flow": {
+    "conditions": [
+      {
+        "id": "inlet-filter-need-service",
+        "title": {
+          "en": "Inlet filter need service",
+          "da": "Indvendig filter kræver udskiftning"
+        },
+        "titleFormatted": {
+          "en": "Inlet filter !{{does|doesn't}} need service",
+          "da": "Indvendig filter !{{kræver|kræver ikke}} udskiftning"
+        },
+        "hint": {
+          "en": "need service"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=airfilter"
+          }
+        ]
+      },
+      {
+        "id": "outlet-filter-need-service",
+        "title": {
+          "en": "Outlet filter need service",
+          "da": "Udvendig filter kræver udskiftning"
+        },
+        "titleFormatted": {
+          "en": "Outlet filter !{{does|doesn't}} need service",
+          "da": "Udvendig filter !{{kræver|kræver ikke}} udskiftning"
+        },
+        "hint": {
+          "en": "outlet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=airfilter"
+          }
+        ]
+      },
+      {
+        "id": "inlet-days-to-service",
+        "title": {
+          "en": "Inlet days to service",
+          "da": "Indvendig filter dage til udskiftning"
+        },
+        "titleFormatted": {
+          "en": "Inlet filter needs change within !{{less|more}} than [[Days]] days",
+          "da": "Indvendig filter skal skiftes om !{{mindre|mere}} end [[Days]] dage"
+        },
+        "hint": {
+          "en": "fdsfjsdf"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=airfilter"
+          },
+          {
+            "type": "number",
+            "name": "Days",
+            "placeholder": {
+              "en": "Days",
+              "da": "Dage"
+            },
+            "min": 0,
+            "max": 100,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "outlet-days-to-service",
+        "title": {
+          "en": "Outlet days to service",
+          "da": "Udvendig filter dage til udskiftning"
+        },
+        "titleFormatted": {
+          "en": "Outlet filter needs change within !{{less|more}} than [[Days]] days",
+          "da": "Udvendig filter skal skiftes om !{{mindre|mere}} end [[Days]] dage"
+        },
+        "hint": {
+          "en": "fsdfsd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=airfilter"
+          },
+          {
+            "type": "number",
+            "name": "Days",
+            "placeholder": {
+              "en": "Days",
+              "da": "Dage"
+            },
+            "min": 0,
+            "max": 100,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "outdoor-degree-indicator",
+        "title": {
+          "en": "Outdoor degree indicator",
+          "da": "Udendørs temperatur indicator"
+        },
+        "titleFormatted": {
+          "en": "Outdoor temperature !{{below|above}} [[Degree]] degree",
+          "da": "Udvendig temperatur er !{{mindre|mere}} end [[Degree]] grader"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=airfilter"
+          },
+          {
+            "type": "number",
+            "name": "Degree",
+            "placeholder": {
+              "en": "Degree",
+              "da": "Grader"
+            },
+            "min": -40,
+            "max": 100,
+            "step": 1
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Airfilter"
+      },
+      "class": "heater",
+      "capabilities": [
+        "alarm_connection_capability",
+        "alarm_read_capability",
+        "temperature_outside_capability",
+        "temperature_supply_capability",
+        "temperature_extract_capability",
+        "temperature_discharge_capability",
+        "temperature_condenser_capability",
+        "temperature_evaporator_capability",
+        "percentage_humidity_capability",
+        "temperature_master_capability",
+        "water_top_temperature_capability",
+        "water_bottom_temperature_capability",
+        "days_filter_inlet_capability",
+        "days_filter_outlet_capability",
+        "alarm_filter_inlet_capability",
+        "alarm_filter_outlet_capability",
+        "systemworkmode_capability",
+        "heater_external_capability"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/airfilter/assets/images/small.png",
+        "large": "/drivers/airfilter/assets/images/large.png",
+        "xlarge": "/drivers/airfilter/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "airfilter",
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Connection"
+          },
+          "children": [
+            {
+              "id": "device-ip",
+              "type": "text",
+              "label": {
+                "en": "IP address"
+              },
+              "value": "192.168.1.107",
+              "hint": {
+                "en": "Specify the ip of the Nilan Compact P - Air 9."
+              }
+            },
+            {
+              "id": "device-port",
+              "type": "number",
+              "label": {
+                "en": "Port"
+              },
+              "value": 502,
+              "min": 0,
+              "max": 10000,
+              "hint": {
+                "en": "Port for ModBus communication. Default is 502."
+              }
+            },
+            {
+              "id": "device-id",
+              "type": "number",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": 1,
+              "min": 0,
+              "max": 8
+            },
+            {
+              "id": "update-rate",
+              "type": "number",
+              "label": {
+                "en": "Pull timer"
+              },
+              "hint": {
+                "en": "Second interval between data read."
+              },
+              "value": 30,
+              "min": 0,
+              "max": 1000
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "alarm_connection_capability": {
+      "type": "boolean",
+      "title": {
+        "en": "Connection error"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/images/thin-ethernet-slash.svg"
+    },
+    "alarm_filter_inlet_capability": {
+      "type": "boolean",
+      "title": {
+        "en": "Inlet filter service",
+        "da": "Indvendig filter service"
+      },
+      "getable": true,
+      "setable": true,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/images/sharp-light-vent-damper-circle-exclamation.svg"
+    },
+    "alarm_filter_outlet_capability": {
+      "type": "boolean",
+      "title": {
+        "en": "Outlet filter service",
+        "da": "Udvendig filter service"
+      },
+      "getable": true,
+      "setable": true,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/images/sharp-light-vent-damper-circle-exclamation.svg"
+    },
+    "alarm_read_capability": {
+      "type": "boolean",
+      "title": {
+        "en": "Error read"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/images/sharp-light-database-slash.svg"
+    },
+    "days_filter_inlet_capability": {
+      "type": "number",
+      "title": {
+        "en": "Inlet filter",
+        "da": "Indvendig filter"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "units": {
+        "en": "Dage"
+      },
+      "insights": true,
+      "icon": "/assets/images/sharp-light-vent-damper-clock.svg"
+    },
+    "days_filter_outlet_capability": {
+      "type": "number",
+      "title": {
+        "en": "Outlet filter",
+        "da": "Udvendig filter"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "units": {
+        "en": "Dage"
+      },
+      "insights": true,
+      "icon": "/assets/images/sharp-light-vent-damper-clock.svg"
+    },
+    "heater_external_capability": {
+      "type": "string",
+      "title": {
+        "en": "External heater",
+        "da": "Ekstern varmer"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "icon": "/assets/images/fan-sharp-light.svg",
+      "insights": true
+    },
+    "percentage_humidity_capability": {
+      "type": "number",
+      "title": {
+        "en": "Humidity",
+        "da": "Luftfugtighed"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "units": {
+        "en": "%"
+      },
+      "min": 0,
+      "decimals": 0,
+      "max": 100,
+      "insights": true,
+      "icon": "/assets/images/droplet-percent-sharp-light.svg"
+    },
+    "systemworkmode_capability": {
+      "type": "string",
+      "title": {
+        "en": "System status",
+        "da": "System status"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "icon": "/assets/images/dryer-sharp-light.svg",
+      "insights": true
+    },
+    "temperature_condenser_capability": {
+      "type": "number",
+      "title": {
+        "en": "Condenseor",
+        "da": "Kondensator"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "units": {
+        "en": "°C"
+      },
+      "min": -40,
+      "decimals": 0,
+      "insights": true,
+      "icon": "/assets/images/sharp-light-fan-circle-arrow-right.svg"
+    },
+    "temperature_discharge_capability": {
+      "type": "number",
+      "title": {
+        "en": "Discharge",
+        "da": "Afkastluft"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "units": {
+        "en": "°C"
+      },
+      "min": -40,
+      "decimals": 0,
+      "insights": true,
+      "icon": "/assets/images/sharp-light-vent-damper-circle-arrow-right.svg"
+    },
+    "temperature_evaporator_capability": {
+      "type": "number",
+      "title": {
+        "en": "Evaporator",
+        "da": "Fordamper"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "units": {
+        "en": "°C"
+      },
+      "min": -40,
+      "decimals": 0,
+      "insights": true,
+      "icon": "/assets/images/oil-temperature-sharp-light.svg"
+    },
+    "temperature_extract_capability": {
+      "type": "number",
+      "title": {
+        "en": "Extract",
+        "da": "Fraluft"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "units": {
+        "en": "°C"
+      },
+      "min": -40,
+      "decimals": 0,
+      "insights": true,
+      "icon": "/assets/images/temperature-high-sharp-light.svg"
+    },
+    "temperature_master_capability": {
+      "type": "number",
+      "title": {
+        "en": "Master-sensor",
+        "da": "Hoved-sensor"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "units": {
+        "en": "°C"
+      },
+      "min": -40,
+      "decimals": 0,
+      "insights": true,
+      "icon": "/assets/images/thermometer-sharp-light.svg"
+    },
+    "temperature_outside_capability": {
+      "type": "number",
+      "title": {
+        "en": "Outdoor",
+        "da": "Udendørs"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "units": {
+        "en": "°C"
+      },
+      "min": -40,
+      "decimals": 0,
+      "insights": true,
+      "icon": "/assets/images/sun-dust-sharp-light.svg"
+    },
+    "temperature_supply_capability": {
+      "type": "number",
+      "title": {
+        "en": "Supply",
+        "da": "Tilluft"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "units": {
+        "en": "°C"
+      },
+      "min": -40,
+      "decimals": 0,
+      "insights": true,
+      "icon": "/assets/images/sharp-light-wind-circle-plus.svg"
+    },
+    "water_bottom_temperature_capability": {
+      "type": "number",
+      "title": {
+        "en": "Warm water bottom",
+        "da": "Varmt vand (bottom)"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "units": {
+        "en": "°C"
+      },
+      "min": -40,
+      "decimals": 0,
+      "insights": true,
+      "icon": "/assets/images/sharp-light-tank-water-circle-arrow-down.svg"
+    },
+    "water_top_temperature_capability": {
+      "type": "number",
+      "title": {
+        "en": "Warm water top",
+        "da": "Varmt vand (top)"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": true,
+      "units": {
+        "en": "°C"
+      },
+      "min": -40,
+      "decimals": 0,
+      "insights": true,
+      "icon": "/assets/images/sharp-light-tank-water-circle-arrow-up.svg"
+    }
+  }
+}

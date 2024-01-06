@@ -1,0 +1,12 @@
+{
+    "type": "number",
+    "title": { "en": "Outdoor", "da": "Udendørs" },
+    "uiComponent": "sensor",
+    "getable": true,
+    "setable": true,
+    "units": { "en": "°C" },
+    "min": -40,
+    "decimals": 0,
+    "insights": true,
+    "icon": "/assets/images/sun-dust-sharp-light.svg"
+  }

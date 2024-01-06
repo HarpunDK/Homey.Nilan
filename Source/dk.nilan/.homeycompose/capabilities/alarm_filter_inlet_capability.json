@@ -1,0 +1,9 @@
+{
+  "type": "boolean",
+  "title": { "en": "Inlet filter service", "da": "Indvendig filter service" },
+  "getable": true,
+  "setable": true,
+  "insights": true,
+  "uiComponent": "sensor",
+  "icon": "/assets/images/sharp-light-vent-damper-circle-exclamation.svg"
+}

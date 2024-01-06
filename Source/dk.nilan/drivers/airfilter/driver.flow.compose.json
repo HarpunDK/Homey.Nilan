@@ -1,0 +1,110 @@
+{
+  "conditions": [
+    {
+      "id": "inlet-filter-need-service",
+      "title": {
+        "en": "Inlet filter need service",
+        "da": "Indvendig filter kræver udskiftning"
+      },
+      "titleFormatted": {
+        "en": "Inlet filter !{{does|doesn't}} need service",
+        "da": "Indvendig filter !{{kræver|kræver ikke}} udskiftning"
+      },
+      "hint": {
+        "en": "need service"
+      }
+    },
+    {
+      "id": "outlet-filter-need-service",
+      "title": {
+        "en": "Outlet filter need service",
+        "da": "Udvendig filter kræver udskiftning"
+      },
+      "titleFormatted": {
+        "en": "Outlet filter !{{does|doesn't}} need service",
+        "da": "Udvendig filter !{{kræver|kræver ikke}} udskiftning"
+      },
+      "hint": {
+        "en": "outlet"
+      }
+    },
+    {
+      "id": "inlet-days-to-service",
+      "title": {
+        "en": "Inlet days to service",
+        "da": "Indvendig filter dage til udskiftning"
+      },
+      "titleFormatted": {
+        "en": "Inlet filter needs change within !{{less|more}} than [[Days]] days",
+        "da": "Indvendig filter skal skiftes om !{{mindre|mere}} end [[Days]] dage"
+      },
+      "hint": {
+        "en": "fdsfjsdf"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "Days",
+          "placeholder": {
+            "en": "Days", 
+            "da": "Dage"
+          },
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "outlet-days-to-service",
+      "title": {
+        "en": "Outlet days to service",
+        "da": "Udvendig filter dage til udskiftning"
+      },
+      "titleFormatted": {
+        "en": "Outlet filter needs change within !{{less|more}} than [[Days]] days",
+        "da": "Udvendig filter skal skiftes om !{{mindre|mere}} end [[Days]] dage"
+      },
+      "hint": {
+        "en": "fsdfsd"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "Days",
+          "placeholder": {
+            "en": "Days", 
+            "da": "Dage"
+          },
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "outdoor-degree-indicator",
+      "title": {
+        "en": "Outdoor degree indicator",
+        "da": "Udendørs temperatur indicator"
+      },
+      "titleFormatted": {
+        "en": "Outdoor temperature !{{below|above}} [[Degree]] degree",
+        "da": "Udvendig temperatur er !{{mindre|mere}} end [[Degree]] grader"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "Degree",
+          "placeholder": {
+            "en": "Degree",
+            "da": "Grader"
+          },
+          "min": -40,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    }
+  ]
+}

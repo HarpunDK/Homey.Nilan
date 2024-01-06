@@ -1,0 +1,57 @@
+[
+    {
+        "type": "group",
+        "label": {
+            "en": "Connection"
+        },
+        "children": [
+          {
+            "id": "device-ip",
+            "type": "text",
+            "label": { 
+              "en": "IP address"
+            },
+            "value": "192.168.1.107",
+            "hint": { 
+              "en": "Specify the ip of the Nilan Compact P - Air 9."
+             }
+          },
+          {
+            "id": "device-port",
+            "type": "number",
+            "label": { 
+              "en": "Port"
+             },
+            "value": 502,
+            "min": 0,
+            "max": 10000,
+            "hint": { 
+              "en": "Port for ModBus communication. Default is 502."
+             }
+          },
+          {
+            "id": "device-id",
+            "type": "number",
+            "label": { 
+              "en": "Device ID"
+             },
+            "value": 1,
+            "min": 0,
+            "max": 8
+          },
+          {
+            "id": "update-rate",
+            "type": "number",
+            "label": { 
+              "en": "Pull timer"
+             },
+             "hint": {
+              "en": "Second interval between data read."
+             },
+              "value": 30,
+              "min": 0,
+              "max": 1000
+          }
+        ]
+    }
+]

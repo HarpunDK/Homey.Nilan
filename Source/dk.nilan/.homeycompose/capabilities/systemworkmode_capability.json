@@ -1,0 +1,9 @@
+{
+    "type": "string",
+    "title": { "en": "System status", "da": "System status" },
+    "uiComponent": "sensor",
+    "getable": true,
+    "setable": true,
+    "icon": "/assets/images/dryer-sharp-light.svg",
+    "insights": true
+  }

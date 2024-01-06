@@ -1,0 +1,12 @@
+{
+    "type": "number",
+    "title": { "en": "Discharge", "da": "Afkastluft" },
+    "uiComponent": "sensor",
+    "getable": true,
+    "setable": true,
+    "units": { "en": "°C" },
+    "min": -40,
+    "decimals": 0,
+    "insights": true,
+    "icon": "/assets/images/sharp-light-vent-damper-circle-arrow-right.svg"
+  }
