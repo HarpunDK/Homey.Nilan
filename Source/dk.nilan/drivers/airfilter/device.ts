@@ -12,7 +12,7 @@ class AirfilterDevice extends Homey.Device {
    */
   async onInit() {
     this.log('AirfilterDevice has been initialized');
-
+    
     var deviceDriverInfo = this.getData().id;
     
     // --- --- --- --- ---
@@ -21,14 +21,45 @@ class AirfilterDevice extends Homey.Device {
     
     var currentStrategy = _.find(strategies, (strategy) => strategy.GetSupportedDevice() == deviceDriverInfo) as INilanDevice;
     
+    // Trigger
+    const setpointFanSpeedTriggerCard         = this.homey.flow.getDeviceTriggerCard("setpoint-fan-speed-changed");
+    const setpointUserTemperatureTriggerCard  = this.homey.flow.getDeviceTriggerCard("setpoint-user-temperature-changed");
+    
     // Catch up right now
 
-    await this.PullDataCycle(currentStrategy);
+    var dataReadStartup = await this.PullDataCycle(currentStrategy);
+    await this.SetCapabilityValues(dataReadStartup);
 
     this.homey.setInterval(async () => {
-      await this.PullDataCycle(currentStrategy);
-    }, await this.PullIntervalSeconds() * 1000) 
+      var dataRead = await this.PullDataCycle(currentStrategy);
 
+      // Var old-values: 
+      var userFanSpeedOldValue    = await +(this.getStoreValue("UserFanSpeed") ?? 0);
+      var userTemperatureOldValue = await +(this.getStoreValue("UserTemperature") ?? 0);
+
+      await this.SetCapabilityValues(dataRead);
+
+      if (dataRead.IsReadingComplete()){
+        // Check if user-fan-changed
+        if (userFanSpeedOldValue > 0 && userFanSpeedOldValue != dataRead.UserFanSpeed) {
+          // Raise changed event
+          this.log("CHANGED", "UserFan", dataRead.UserFanSpeed);
+          await setpointFanSpeedTriggerCard.trigger(this);
+          await this.setStoreValue("UserFanSpeed", dataRead.UserFanSpeed);
+          await this.homey.notifications.createNotification({ excerpt: `${this.getName()}: User fan speed changed. New value: ${dataRead.UserFanSpeed}/4`});
+        }
+
+        if (userTemperatureOldValue > 0 && userTemperatureOldValue != dataRead.UserTemperature) {
+          // Raise changed event
+          this.log("CHANGED", "UserTemperature", dataRead.UserTemperature);
+          await setpointUserTemperatureTriggerCard.trigger(this);
+          await this.setStoreValue("UserTemperature", dataRead.UserTemperature);
+          await this.homey.notifications.createNotification({ excerpt: `${this.getName()}: User temperature changed. New value: ${dataRead.UserTemperature}°C`});
+        }
+      }
+    }, await this.PullIntervalSeconds() * 1000);
+
+    //setpointFanSpeedTriggerCard.registerRunListener()
 
     // Conditions:
     const inletNeedServiceTrigger    = this.homey.flow.getConditionCard("inlet-filter-need-service");
@@ -36,6 +67,8 @@ class AirfilterDevice extends Homey.Device {
     const inletDaysToServiceTrigger  = this.homey.flow.getConditionCard("inlet-days-to-service");
     const outletDaysToServiceTrigger = this.homey.flow.getConditionCard("outlet-days-to-service");
     const outdoorDegreeIndicatorTrigger = this.homey.flow.getConditionCard("outdoor-degree-indicator");
+
+    
 
     inletNeedServiceTrigger.registerRunListener(async () => {
       return this.getCapabilityValue("alarm_filter_inlet_capability") || false;
@@ -62,11 +95,11 @@ class AirfilterDevice extends Homey.Device {
 
   }
 
-  private PullDataCycle = async (deviceStrategy: INilanDevice) => {
+  private PullDataCycle = async (deviceStrategy: INilanDevice) : Promise<NilanDataReadInfo> => {
     var configuration = await this.GetConnectionSettings();
     var dataRead = await deviceStrategy.GetData(configuration);
 
-    await this.SetCapabilityValues(dataRead);
+    return dataRead;
   }
 
   /**
@@ -174,12 +207,9 @@ class AirfilterDevice extends Homey.Device {
     await this.setCapabilityValue("systemworkmode_capability", dataRead.SystemWorkMode);
     await this.setCapabilityValue("heater_external_capability", dataRead.HeaterExternalState);
     
-
-
-
-
-
-
+    // User
+    await this.setCapabilityValue("user_fan_speed_capability", dataRead.UserFanSpeed);
+    await this.setCapabilityValue("user_temperature_capability", dataRead.UserTemperature);
 
   }
 

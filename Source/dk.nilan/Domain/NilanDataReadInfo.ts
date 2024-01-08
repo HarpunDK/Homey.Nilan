@@ -10,6 +10,8 @@ export class NilanDataReadInfo {
                 public WaterTempSetpoint: number,
                 public TempMasterSensor: number,
                 public HumiditySensor: number,
+                public UserFanSpeed: number,
+                public UserTemperature: number,
                 public T16TempSensor: number,
                 public T17TempSensor: number,
                 public T18TempSensor: number,
@@ -21,6 +23,10 @@ export class NilanDataReadInfo {
     {}
 
     public static CreateEmpty = (connectionError: boolean) : NilanDataReadInfo => {
-        return new NilanDataReadInfo(0, 0, 0, 0, "", "", "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, connectionError);
+        return new NilanDataReadInfo(0, 0, 0, 0, "", "", "", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, connectionError);
+    }
+
+    public IsReadingComplete = () : boolean => {
+        return !this.ConnectionError && !this.ErrorRead;
     }
 }

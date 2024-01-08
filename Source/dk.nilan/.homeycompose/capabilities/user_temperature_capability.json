@@ -1,0 +1,10 @@
+{
+  "type": "number",
+  "title": { "en": "Setpoint temperature", "da": "Setpoint temperatur" },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true,
+  "units": { "en": "°C" },
+  "insights": true,
+  "icon": "/assets/images/sharp-light-temperature-list-circle-user.svg"
+}
