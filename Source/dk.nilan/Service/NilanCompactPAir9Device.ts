@@ -114,6 +114,22 @@ export class NilanCompactPAir9Device implements INilanDevice {
                 dataRead.ErrorRead = true;
             });
 
+            await client.readHoldingRegisters(4747, 1)
+            .then(response => {
+                dataRead.UserFanSpeed = NumberHelper.ToInt16(response.data[0])-100;
+            }).catch(error => {
+                this.BaseClass.log("ERR:", error);
+                dataRead.ErrorRead = true;
+            });
+
+            await client.readHoldingRegisters(4746, 1)
+            .then(response => {
+                dataRead.UserTemperature = NumberHelper.ParseAsTemperature(response.data[0]);
+            }).catch(error => {
+                this.BaseClass.log("ERR:", error);
+                dataRead.ErrorRead = true;
+            });
+
             // DEMO
             // await client.readHoldingRegisters(23, 1)
             //     .then(response => {

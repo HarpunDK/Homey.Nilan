@@ -1,6 +1,6 @@
 {
   "id": "dk.nilan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -11,8 +11,8 @@
     "da": "Nilan Air"
   },
   "description": {
-    "en": "Adds support for Nilan Air-filters.",
-    "da": "Tilføjer understøttelse for Nilan Air"
+    "en": "Create outstanding indoor climate",
+    "da": "Create outstanding indoor climate"
   },
   "category": [
     "climate"
@@ -34,5 +34,6 @@
       }
     }
   },
-  "brandColor": "#db2029"
+  "brandColor": "#db2029",
+  "homeyCommunityTopicId": 100504
 }

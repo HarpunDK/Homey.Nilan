@@ -1,0 +1,10 @@
+{
+  "type": "number",
+  "title": { "en": "Setpoint fan speed", "da": "Setpoint blæser" },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": true,
+  "units": { "en": "/4" },
+  "insights": true,
+  "icon": "/assets/images/light-fan-table-circle-user.svg"
+}

@@ -1,0 +1,198 @@
+Nilan_Temp_T11_HotWaterTop   = 5162
+Nilan_Temp_T12_HotWaterBot   = 5163
+Nilan_Temp_T1_Outdoor        = 5152
+
+1047 System's working mode
+1323 Compressor's control for DHW
+1325 Buzzer mode
+1326 Inlet filter's Time threshold
+1327 Outlet filter's Time threshold
+1328 Pass days for Inlet software filter
+1329 Pass days for Outlet software filter 
+2402 The Force Operation mode
+2403 The Inlet temperature Max
+register 2404 The summer Inlet temperature Min
+register 2405 The winter Inlet temperature Min
+register 2406 The Setpoint of Sum/Win selecting
+register 2407 The Offset of Sum/Win selecting
+register 2828 Max. of DHW temperature
+register 2836 Duration of Extended operation 1
+register 2841 Duration of Extended operation 2 
+register 3153 has value [0]
+register 3154 has value [0]
+register 3155 has value [0]
+register 3156 has value [1]
+register 3157 has value [2]
+register 3158 has value [2]
+register 3159 has value [1]
+register 3160 has value [1]
+register 3161 has value [1]
+register 3162 has value [2]
+register 3163 has value [2]
+register 3164 has value [1]
+register 3256 Allow the user to Stop system
+register 3259 Timeout of Buffer tank electric heater enabling
+register 3260 Level of BD back light
+register 3261 Timeout of BD sleeping (back light switch off)
+register 3935 DHW min. supply limit
+register 3938 DHW heater enable
+register 3941 Anti-Legionella mode
+register 3942 Start Hour of Anti-Legionella mode.
+register 3951 BD work interface language
+register 3953 Circuital pump default flow
+register 4090 Compressor out door low limit
+register 4094 Circuital pump speed for Cooling mode
+register 4104 has value [1]
+register 4233 DHW sacrificial anode protection
+register 4235 Events list sort mode
+register 4689 Control of Air Damper 1 switch
+register 4690 Control of Air Damper 2 switch
+register 4691 Control of Air Damper 3 switch
+register 4692 Deterioration of Inlet filter
+register 4693 Deterioration of Outlet filter
+register 4699 Control of Inlet Fan
+register 4700 Control of Outlet Fan
+register 4701 Control of Heater
+register 4703 Control of 4Way
+register 4704 Control of Bypass1
+register 4705 Control of Bypass2
+register 4706 Control of Compressor1
+register 4707 Control of Compressor2
+register 4708 Control of Compressor3
+register 4709 Control of Compressor4
+register 4710 Control of Compressor5
+register 4711 Control of Compressor6
+register 4712 Value of CO2 sensor
+register 4713 Value of BD temperature sensor
+register 4715 Control of BypassDamper
+register 4716 Value of Humidity sensor
+register 4727 Pause mode enable
+register 4746 User setpoint value
+register 4747 User Fan speed setting
+register 4748 Anti-Legionella mode activity
+register 4749 Anti-Legionella mode force
+register 4756 Inlet filter reset
+register 4757 Outlet filter reset
+
+
+register 5019 Heater external state
+register 5021 BD TPanel temperature sensor state
+register 5059 Anti-Legionella mode activity for Solar
+register 5088 Temperature of Master sensor
+register 5096 DI value 1
+register 5097 DI value 2
+register 5098 DI value 3
+register 5099 DI value 4
+register 5100 DI value 5
+register 5101 DI value 6
+register 5102 DI value 7
+register 5103 DI value 8
+register 5104 DI value 9
+register 5105 DI value 10
+register 5132 AI value 1
+register 5133 AI value 2
+register 5134 AI value 3
+register 5135 AI value 4
+register 5136 AI value 5
+register 5137 AI value 6
+register 5138 AI value 7
+register 5139 AI value 8
+register 5140 AI value 9
+register 5152 Temperature sensor 1
+register 5153 Temperature sensor 2
+register 5154 Temperature sensor 3
+register 5155 Temperature sensor 4
+register 5156 Temperature sensor 5
+register 5157 Temperature sensor 6
+register 5158 Temperature sensor 7
+register 5159 Temperature sensor 8
+register 5160 Temperature sensor 9
+register 5161 Temperature sensor 10
+register 5162 Temperature sensor 11
+register 5163 Temperature sensor 12
+register 5164 Temperature sensor 13
+register 5165 Temperature sensor 14
+register 5166 Temperature sensor 15
+register 5167 Temperature sensor 16
+register 5168 Temperature sensor 17
+register 5169 Temperature sensor 18
+register 5170 Temperature sensor 19
+register 5171 Temperature sensor 20
+register 5172 Temperature sensor 21
+register 5173 Temperature sensor 22
+register 5174 Temperature sensor 23
+register 5175 Temperature sensor 24
+register 5176 Temperature sensor 25
+register 5177 Temperature sensor 26
+register 5178 Temperature sensor 27
+register 5179 Temperature sensor 28
+register 5180 Temperature sensor 29
+register 5181 Temperature sensor 30
+register 5182 Temperature sensor 31
+register 5183 Temperature sensor 32
+register 5184 Temperature sensor 33
+register 5185 Temperature sensor 34
+register 5186 Temperature sensor 35
+register 5187 Temperature sensor 36
+register 5188 Temperature sensor 37
+register 5189 Temperature sensor 38
+register 5190 Temperature sensor 39
+register 5191 Temperature sensor 40
+register 5192 Temperature sensor 41
+register 5193 Temperature sensor 42
+register 5194 Temperature sensor 43
+register 5195 Temperature sensor 44
+register 5196 Temperature sensor 45
+register 5197 Temperature sensor 46
+register 5198 Temperature sensor 47
+register 5199 Temperature sensor 48
+register 5200 Temperature sensor 49
+register 5201 Temperature sensor 50
+register 5272 Pressure sensor 1
+register 5273 Pressure sensor 2
+register 5274 Pressure sensor 3
+register 5275 Pressure sensor 4
+register 5276 Pressure sensor 5
+register 5277 Pressure sensor 6
+register 5278 Pressure sensor 7
+register 5279 Pressure sensor 8
+register 5280 Pressure sensor 9
+register 5281 Pressure sensor 10
+register 5282 Pressure sensor 11
+register 5283 Pressure sensor 12
+register 5284 Digital output 1
+register 5285 Digital output 2
+register 5286 Digital output 3
+register 5287 Digital output 4
+register 5288 Digital output 5
+register 5289 Digital output 6
+register 5290 Digital output 7
+register 5291 Digital output 8
+register 5292 Digital output 9
+register 5293 Digital output 10
+register 5367 Digital output 40
+register 5372 Analog output 1
+register 5373 Analog output 2
+register 5374 Analog output 3
+register 5375 Analog output 4
+register 5376 Analog output 5
+register 5432 Current regulation mode
+register 5450 Current phase of defrosting
+register 5468 Control of Pre-Heater
+register 5470 Control of BA HEX
+register 5474 Control of Pump1
+register 5475 Control of Pump2
+register 5476 Control of Pump3
+register 5516 Temperature 40 sensor as Digital Input
+register 5517 Temperature 41 sensor as Digital Input
+register 5518 Temperature 42 sensor as Digital Input
+register 5519 Temperature 43 sensor as Digital Input
+register 5520 Temperature 44 sensor as Digital Input
+register 5521 Temperature 45 sensor as Digital Input
+register 5522 Temperature 46 sensor as Digital Input
+register 5523 Temperature 47 sensor as Digital Input
+register 5524 Temperature 48 sensor as Digital Input
+register 5525 Temperature 49 sensor as Digital Input
+register 5526 Temperature 50 sensor as Digital Input
+register 5539 Hardware version
+register 5548 User DHW setpoint value

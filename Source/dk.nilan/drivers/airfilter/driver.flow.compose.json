@@ -46,7 +46,7 @@
           "type": "number",
           "name": "Days",
           "placeholder": {
-            "en": "Days", 
+            "en": "Days",
             "da": "Dage"
           },
           "min": 0,
@@ -73,7 +73,7 @@
           "type": "number",
           "name": "Days",
           "placeholder": {
-            "en": "Days", 
+            "en": "Days",
             "da": "Dage"
           },
           "min": 0,
@@ -105,6 +105,30 @@
           "step": 1
         }
       ]
+    }
+  ],
+  "triggers": [
+    {
+      "id": "setpoint-fan-speed-changed",
+      "title": {
+        "en": "Fan speed changed",
+        "da": "Blæser-hastighed ændret"
+      },
+      "hint": {
+        "en": "When user/controller changes fan speed",
+        "da": "Når bruger/betjening ændrer blæser hastighed"
+      }
+    },
+    {
+      "id": "setpoint-user-temperature-changed",
+      "title": {
+        "en": "Setpoint temperature changed",
+        "da": "Setpoint temperatur ændret"
+      },
+      "hint": {
+        "en": "When user/controller changes temperature",
+        "da": "Når bruger/betjening ændrer setpoint temperatur"
+      }
     }
   ]
 }

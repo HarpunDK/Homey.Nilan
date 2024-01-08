@@ -12,6 +12,7 @@
     "water_top_temperature_capability", "water_bottom_temperature_capability",
     "days_filter_inlet_capability", "days_filter_outlet_capability",
     "alarm_filter_inlet_capability", "alarm_filter_outlet_capability",
+    "user_fan_speed_capability", "user_temperature_capability",
     "systemworkmode_capability", "heater_external_capability"
    ],
   "platforms": [
