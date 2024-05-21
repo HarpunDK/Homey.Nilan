@@ -129,6 +129,17 @@
         "en": "When user/controller changes temperature",
         "da": "Når bruger/betjening ændrer setpoint temperatur"
       }
+    },
+    {
+      "id": "outdoor-temperature-changed",
+      "title": {
+        "en": "Outdoor temperature changed",
+        "da": "Udendørs temperatur ændret"
+      },
+      "hint": {
+        "en": "When outdoor temperature changes",
+        "da": "Når udendørs temperatur ændres"
+      }
     }
   ]
 }

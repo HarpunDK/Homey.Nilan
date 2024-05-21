@@ -22,8 +22,9 @@ class AirfilterDevice extends Homey.Device {
     var currentStrategy = _.find(strategies, (strategy) => strategy.GetSupportedDevice() == deviceDriverInfo) as INilanDevice;
     
     // Trigger
-    const setpointFanSpeedTriggerCard         = this.homey.flow.getDeviceTriggerCard("setpoint-fan-speed-changed");
-    const setpointUserTemperatureTriggerCard  = this.homey.flow.getDeviceTriggerCard("setpoint-user-temperature-changed");
+    const setpointFanSpeedTriggerCard          = this.homey.flow.getDeviceTriggerCard("setpoint-fan-speed-changed");
+    const setpointUserTemperatureTriggerCard   = this.homey.flow.getDeviceTriggerCard("setpoint-user-temperature-changed");
+    const outdoorTemperatureChangedTriggerCard = this.homey.flow.getDeviceTriggerCard("outdoor-temperature-changed");
     
     // Catch up right now
 
@@ -36,6 +37,7 @@ class AirfilterDevice extends Homey.Device {
       // Var old-values: 
       var userFanSpeedOldValue    = await +(this.getStoreValue("UserFanSpeed") ?? 0);
       var userTemperatureOldValue = await +(this.getStoreValue("UserTemperature") ?? 0);
+      var outdoorTemperatureOldValue = await +(this.getStoreValue("OutdoorTemperature") ?? -200);
 
       await this.SetCapabilityValues(dataRead);
 
@@ -55,6 +57,14 @@ class AirfilterDevice extends Homey.Device {
           await setpointUserTemperatureTriggerCard.trigger(this);
           await this.setStoreValue("UserTemperature", dataRead.UserTemperature);
           await this.homey.notifications.createNotification({ excerpt: `${this.getName()}: User temperature changed. New value: ${dataRead.UserTemperature}°C`});
+        }
+
+        if (outdoorTemperatureOldValue > -200 && outdoorTemperatureOldValue != dataRead.T1TempSensor) {
+          // Raise changed event
+          this.log("CHANGED", "OutdoorTemperature", dataRead.T1TempSensor);
+          await outdoorTemperatureChangedTriggerCard.trigger(this);
+          await this.setStoreValue("OutdoorTemperature", dataRead.T1TempSensor);
+          //await this.homey.notifications.createNotification({ excerpt: `${this.getName()}: User temperature changed. New value: ${dataRead.UserTemperature}°C`});
         }
       }
     }, await this.PullIntervalSeconds() * 1000);

@@ -4,5 +4,8 @@
   },
   "1.0.1": {
     "en": "Triggers added: fan speed and user temperature."
+  },
+  "1.0.2": {
+    "en": "Trigger on outside temperature changed added"
   }
 }
